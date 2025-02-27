@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_viewport_viewports",
+  "info": {
+    "displayName": "viewport"
+  },
+  "options": {},
+  "attributes": {
+    "south": {
+      "type": "decimal"
+    },
+    "east": {
+      "type": "decimal"
+    },
+    "west": {
+      "type": "decimal"
+    },
+    "north": {
+      "type": "decimal"
+    }
+  }
+}

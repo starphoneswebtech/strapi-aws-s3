@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_geometry_geometries",
+  "info": {
+    "displayName": "geometry",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "location": {
+      "displayName": "location",
+      "type": "component",
+      "repeatable": false,
+      "component": "location.location"
+    },
+    "viewport": {
+      "displayName": "viewport",
+      "type": "component",
+      "repeatable": false,
+      "component": "viewport.viewport"
+    }
+  }
+}

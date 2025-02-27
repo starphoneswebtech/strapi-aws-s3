@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "store_locations",
+  "info": {
+    "singularName": "store-location",
+    "pluralName": "store-locations",
+    "displayName": "Store-location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "ssid": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "rootStore": {
+      "type": "string",
+      "required": true,
+      "default": "Star Phones"
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "suburb": {
+      "type": "string"
+    },
+    "postCode": {
+      "type": "string",
+      "regex": "^[0-9]*$"
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "geometry": {
+      "displayName": "geometry",
+      "type": "component",
+      "repeatable": false,
+      "component": "geometry.geometry"
+    },
+    "storeHours": {
+      "displayName": "storeHours",
+      "type": "component",
+      "repeatable": false,
+      "component": "store-hours.store-hours"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "directionUrl": {
+      "type": "text",
+      "required": true
+    },
+    "bookingUrl": {
+      "type": "text"
+    }
+  }
+}

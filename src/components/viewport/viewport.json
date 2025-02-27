@@ -1,21 +1,22 @@
 {
   "collectionName": "components_viewport_viewports",
   "info": {
-    "displayName": "viewport"
+    "displayName": "viewport",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "south": {
-      "type": "decimal"
+    "north": {
+      "type": "string"
     },
     "east": {
-      "type": "decimal"
+      "type": "string"
     },
     "west": {
-      "type": "decimal"
+      "type": "string"
     },
-    "north": {
-      "type": "decimal"
+    "south": {
+      "type": "string"
     }
   }
 }

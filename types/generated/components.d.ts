@@ -15,12 +15,13 @@ export interface GeometryGeometry extends Struct.ComponentSchema {
 export interface LocationLocation extends Struct.ComponentSchema {
   collectionName: 'components_location_locations';
   info: {
+    description: '';
     displayName: 'location';
     icon: 'pinMap';
   };
   attributes: {
-    lat: Schema.Attribute.Decimal;
-    lng: Schema.Attribute.Decimal;
+    lat: Schema.Attribute.String;
+    lng: Schema.Attribute.String;
   };
 }
 
@@ -56,13 +57,14 @@ export interface StoreHoursStoreHours extends Struct.ComponentSchema {
 export interface ViewportViewport extends Struct.ComponentSchema {
   collectionName: 'components_viewport_viewports';
   info: {
+    description: '';
     displayName: 'viewport';
   };
   attributes: {
-    east: Schema.Attribute.Decimal;
-    north: Schema.Attribute.Decimal;
-    south: Schema.Attribute.Decimal;
-    west: Schema.Attribute.Decimal;
+    east: Schema.Attribute.String;
+    north: Schema.Attribute.String;
+    south: Schema.Attribute.String;
+    west: Schema.Attribute.String;
   };
 }
 

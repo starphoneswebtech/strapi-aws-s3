@@ -2,15 +2,16 @@
   "collectionName": "components_location_locations",
   "info": {
     "displayName": "location",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "lat": {
-      "type": "decimal"
+      "type": "string"
     },
     "lng": {
-      "type": "decimal"
+      "type": "string"
     }
   }
 }

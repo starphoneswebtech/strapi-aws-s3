@@ -473,6 +473,7 @@ export interface ApiStoreLocationStoreLocation
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.Component<'location.location', false>;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     postCode: Schema.Attribute.String;

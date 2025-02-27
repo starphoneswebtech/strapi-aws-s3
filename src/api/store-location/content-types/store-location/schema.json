@@ -4,7 +4,8 @@
   "info": {
     "singularName": "store-location",
     "pluralName": "store-locations",
-    "displayName": "Store-location"
+    "displayName": "Store-location",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,12 +40,6 @@
       "type": "string",
       "required": true
     },
-    "geometry": {
-      "displayName": "geometry",
-      "type": "component",
-      "repeatable": false,
-      "component": "geometry.geometry"
-    },
     "storeHours": {
       "displayName": "storeHours",
       "type": "component",
@@ -61,6 +56,16 @@
     },
     "bookingUrl": {
       "type": "text"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.location"
+    },
+    "viewport": {
+      "type": "component",
+      "repeatable": false,
+      "component": "viewport.viewport"
     }
   }
 }

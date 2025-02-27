@@ -451,6 +451,7 @@ export interface ApiStoreLocationStoreLocation
   extends Struct.CollectionTypeSchema {
   collectionName: 'store_locations';
   info: {
+    description: '';
     displayName: 'Store-location';
     pluralName: 'store-locations';
     singularName: 'store-location';
@@ -465,13 +466,13 @@ export interface ApiStoreLocationStoreLocation
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directionUrl: Schema.Attribute.Text & Schema.Attribute.Required;
-    geometry: Schema.Attribute.Component<'geometry.geometry', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::store-location.store-location'
     > &
       Schema.Attribute.Private;
+    location: Schema.Attribute.Component<'location.location', false>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     postCode: Schema.Attribute.String;
@@ -488,6 +489,7 @@ export interface ApiStoreLocationStoreLocation
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    viewport: Schema.Attribute.Component<'viewport.viewport', false>;
   };
 }
 

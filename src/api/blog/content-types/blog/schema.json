@@ -26,10 +26,6 @@
       "type": "text",
       "required": true
     },
-    "content": {
-      "type": "text",
-      "required": false
-    },
     "cover": {
       "type": "media",
       "multiple": false,
@@ -52,6 +48,10 @@
     "handle": {
       "type": "string",
       "unique": true,
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
       "required": true
     }
   }

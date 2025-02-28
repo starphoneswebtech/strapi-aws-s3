@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_store_details_map_banner_infos",
+  "info": {
+    "displayName": "MapBannerInfo",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Phone Repair"
+    },
+    "subTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Your trusted phone accessories shop in Parramatta"
+    },
+    "intro": {
+      "type": "string",
+      "required": true,
+      "default": "Looking for a phone repair near Parramatta?"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "default": "We got you! Whether your phone isn't charging or you've cracked the screen, we've got you covered. Our expert team will promptly fix your phone, restoring it to like-new condition. Whatever the problem, you can rely on us to bring your phone back to its best!"
+    }
+  }
+}

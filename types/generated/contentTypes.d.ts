@@ -485,12 +485,55 @@ export interface ApiStoreLocationStoreLocation
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     state: Schema.Attribute.String & Schema.Attribute.Required;
+    store_page_detail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::store-page-detail.store-page-detail'
+    >;
     storeHours: Schema.Attribute.Component<'store-hours.store-hours', false>;
     suburb: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     viewport: Schema.Attribute.Component<'viewport.viewport', false>;
+  };
+}
+
+export interface ApiStorePageDetailStorePageDetail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'store_page_details';
+  info: {
+    description: '';
+    displayName: 'store-page-detail';
+    pluralName: 'store-page-details';
+    singularName: 'store-page-detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutUs: Schema.Attribute.Component<'store-details.about-us', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::store-page-detail.store-page-detail'
+    > &
+      Schema.Attribute.Private;
+    mapBannerInfo: Schema.Attribute.Component<
+      'store-details.map-banner-info',
+      false
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    store_location: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::store-location.store-location'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1006,6 +1049,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::service.service': ApiServiceService;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;
+      'api::store-page-detail.store-page-detail': ApiStorePageDetailStorePageDetail;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

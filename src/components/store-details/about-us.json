@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_store_details_aboutuses",
+  "info": {
+    "displayName": "AboutUs",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Mobile Phone Repairs"
+    },
+    "subTitle": {
+      "type": "string",
+      "default": "Choose our reliable, affordable, and efficient phone repair services. Our experienced, trustworthy technicians provide quick, professional repairs, ensuring your device is fixed with care and precision.",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "Unable to access your phone to charge it? Accidentally dropped your phone and cracked the screen? Don’t worry, we can fix it for you right away!  Star Phones mobile repair in Parramatta can have your phone fixed and looking brand new in no time! No matter how big or small the job, you can rely on us to ensure your phone is working like new again.",
+      "required": true
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

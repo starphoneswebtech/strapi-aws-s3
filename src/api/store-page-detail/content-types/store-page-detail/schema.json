@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "store_page_details",
+  "info": {
+    "singularName": "store-page-detail",
+    "pluralName": "store-page-details",
+    "displayName": "store-page-detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "mapBannerInfo": {
+      "displayName": "MapBannerInfo",
+      "type": "component",
+      "repeatable": false,
+      "component": "store-details.map-banner-info",
+      "required": true
+    },
+    "aboutUs": {
+      "displayName": "AboutUs",
+      "type": "component",
+      "repeatable": false,
+      "component": "store-details.about-us"
+    },
+    "store_location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::store-location.store-location",
+      "mappedBy": "store_page_detail"
+    }
+  }
+}

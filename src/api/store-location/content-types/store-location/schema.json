@@ -71,6 +71,12 @@
       "type": "component",
       "repeatable": false,
       "component": "metadata.metadata"
+    },
+    "store_page_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::store-page-detail.store-page-detail",
+      "inversedBy": "store_location"
     }
   }
 }

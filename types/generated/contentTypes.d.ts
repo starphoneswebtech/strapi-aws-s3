@@ -406,9 +406,40 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'faq';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'At Star Phones, we provide a wide variety of accessories, including stylish phone cases, durable screen protectors, reliable chargers, trendy headphones, and much more.'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'What types of mobile phone accessories do you offer?'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: '';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -441,6 +472,9 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     primaryButtonName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     serviceTitle: Schema.Attribute.String;
+    shortDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'With more than 45 stores Australia wide, Star Phones offer various mobile repairs'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1047,6 +1081,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::faq.faq': ApiFaqFaq;
       'api::service.service': ApiServiceService;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;
       'api::store-page-detail.store-page-detail': ApiStorePageDetailStorePageDetail;

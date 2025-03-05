@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service"
+    "displayName": "Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,29 +20,30 @@
       "required": true
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "serviceTitle": {
       "type": "string",
       "required": false
     },
     "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "handle": {
       "type": "string",
@@ -60,6 +62,11 @@
       "type": "component",
       "repeatable": false,
       "component": "metadata.metadata"
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true,
+      "default": "With more than 45 stores Australia wide, Star Phones offer various mobile repairs"
     }
   }
 }

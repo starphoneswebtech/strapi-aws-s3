@@ -72,6 +72,11 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "rank": {
+      "type": "integer",
+      "required": true,
+      "unique": true
     }
   }
 }

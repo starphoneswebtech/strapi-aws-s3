@@ -461,6 +461,9 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     handle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    inNavigation: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

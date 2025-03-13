@@ -67,6 +67,11 @@
       "type": "text",
       "required": true,
       "default": "With more than 45 stores Australia wide, Star Phones offer various mobile repairs"
+    },
+    "inNavigation": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

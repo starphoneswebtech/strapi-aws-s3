@@ -439,6 +439,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
 export interface ApiReviewReview extends Struct.CollectionTypeSchema {
   collectionName: 'reviews';
   info: {
+    description: '';
     displayName: 'Review';
     pluralName: 'reviews';
     singularName: 'review';
@@ -463,6 +464,9 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     Review: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

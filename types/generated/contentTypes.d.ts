@@ -493,12 +493,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     handle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     inNavigation: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;

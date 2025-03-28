@@ -512,9 +512,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     primaryButtonHref: Schema.Attribute.String;
     primaryButtonName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    rank: Schema.Attribute.Integer;
     serviceTitle: Schema.Attribute.String;
     shortDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &

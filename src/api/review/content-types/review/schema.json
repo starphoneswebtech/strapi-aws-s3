@@ -34,8 +34,8 @@
     },
     "rank": {
       "type": "integer",
-      "unique": true,
-      "required": true
+      "unique": false,
+      "required": false
     }
   }
 }

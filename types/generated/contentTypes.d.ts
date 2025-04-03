@@ -406,10 +406,46 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
+  collectionName: 'brands';
+  info: {
+    displayName: 'Brand';
+    pluralName: 'brands';
+    singularName: 'brand';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutUs: Schema.Attribute.Text;
+    brandName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    metadata: Schema.Attribute.Component<'metadata.metadata', true>;
+    productCollection: Schema.Attribute.Component<
+      'product-collection.product-collections',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
-    displayName: 'faq';
+    description: '';
+    displayName: 'Faq';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -430,6 +466,31 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     question: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'What types of mobile phone accessories do you offer?'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -528,7 +589,7 @@ export interface ApiStoreLocationStoreLocation
   collectionName: 'store_locations';
   info: {
     description: '';
-    displayName: 'Store-location';
+    displayName: 'Store Locations';
     pluralName: 'store-locations';
     singularName: 'store-location';
   };
@@ -579,7 +640,7 @@ export interface ApiStorePageDetailStorePageDetail
   collectionName: 'store_page_details';
   info: {
     description: '';
-    displayName: 'store-page-detail';
+    displayName: 'Store Page Details';
     pluralName: 'store-page-details';
     singularName: 'store-page-detail';
   };
@@ -1123,7 +1184,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::brand.brand': ApiBrandBrand;
       'api::faq.faq': ApiFaqFaq;
+      'api::home.home': ApiHomeHome;
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;

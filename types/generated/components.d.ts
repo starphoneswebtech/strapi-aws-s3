@@ -1,5 +1,22 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface FaqFaq extends Struct.ComponentSchema {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'Faq';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'>;
+    question: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Example Question?'>;
+  };
+}
+
 export interface GeometryGeometry extends Struct.ComponentSchema {
   collectionName: 'components_geometry_geometries';
   info: {
@@ -35,6 +52,22 @@ export interface MetadataMetadata extends Struct.ComponentSchema {
   attributes: {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ProductCollectionProductCollections
+  extends Struct.ComponentSchema {
+  collectionName: 'components_product_collection_product_collections';
+  info: {
+    displayName: 'Product Collections';
+    icon: 'gift';
+  };
+  attributes: {
+    collectionDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    collectionLink: Schema.Attribute.String & Schema.Attribute.Required;
+    collectionTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
   };
 }
 
@@ -115,9 +148,11 @@ export interface ViewportViewport extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
+      'product-collection.product-collections': ProductCollectionProductCollections;
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;

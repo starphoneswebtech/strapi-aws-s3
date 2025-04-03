@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_product_collection_product_collections",
+  "info": {
+    "displayName": "Product Collections",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "collectionTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "collectionDescription": {
+      "type": "text",
+      "required": true
+    },
+    "collectionLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

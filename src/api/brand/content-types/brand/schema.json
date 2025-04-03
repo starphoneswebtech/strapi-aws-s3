@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands",
+  "info": {
+    "singularName": "brand",
+    "pluralName": "brands",
+    "displayName": "Brand"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brandName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "aboutUs": {
+      "type": "text"
+    },
+    "productCollection": {
+      "displayName": "Product Collections",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-collection.product-collections"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": true,
+      "component": "metadata.metadata"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

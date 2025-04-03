@@ -59,6 +59,7 @@ export interface ProductCollectionProductCollections
   extends Struct.ComponentSchema {
   collectionName: 'components_product_collection_product_collections';
   info: {
+    description: '';
     displayName: 'Product Collections';
     icon: 'gift';
   };
@@ -68,6 +69,7 @@ export interface ProductCollectionProductCollections
     collectionTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    featureImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 

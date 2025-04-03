@@ -4,7 +4,8 @@
   "info": {
     "singularName": "brand",
     "pluralName": "brands",
-    "displayName": "Brand"
+    "displayName": "Brand",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,17 +27,22 @@
     },
     "metadata": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "metadata.metadata"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "medusaIdentifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

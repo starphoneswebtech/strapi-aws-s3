@@ -409,6 +409,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
 export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   collectionName: 'brands';
   info: {
+    description: '';
     displayName: 'Brand';
     pluralName: 'brands';
     singularName: 'brand';
@@ -429,7 +430,10 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    metadata: Schema.Attribute.Component<'metadata.metadata', true>;
+    medusaIdentifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     productCollection: Schema.Attribute.Component<
       'product-collection.product-collections',
       true

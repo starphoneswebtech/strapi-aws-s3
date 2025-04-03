@@ -419,6 +419,7 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   };
   attributes: {
     aboutUs: Schema.Attribute.Text;
+    banner: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     brandName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;

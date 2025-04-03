@@ -43,6 +43,14 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "banner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

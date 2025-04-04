@@ -435,13 +435,13 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
-    product_collections: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::product-collection.product-collection'
-    >;
     productCollection: Schema.Attribute.Component<
       'product-collection.product-collections',
       true
+    >;
+    productCollections: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-collection.product-collection'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

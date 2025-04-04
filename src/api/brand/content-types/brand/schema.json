@@ -52,7 +52,7 @@
         "images"
       ]
     },
-    "product_collections": {
+    "productCollections": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product-collection.product-collection"

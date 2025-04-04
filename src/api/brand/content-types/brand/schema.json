@@ -45,12 +45,17 @@
       "unique": true
     },
     "banner": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "product_collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-collection.product-collection"
     }
   }
 }

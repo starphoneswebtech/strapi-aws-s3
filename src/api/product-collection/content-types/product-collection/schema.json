@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_collections",
+  "info": {
+    "singularName": "product-collection",
+    "pluralName": "product-collections",
+    "displayName": "Product Collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": "Star Collections"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "collectionBanner": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "medusaIdentifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "collectionLink": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
+    }
+  }
+}

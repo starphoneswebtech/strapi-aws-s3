@@ -435,6 +435,10 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    product_collections: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-collection.product-collection'
+    >;
     productCollection: Schema.Attribute.Component<
       'product-collection.product-collections',
       true
@@ -496,6 +500,47 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductCollectionProductCollection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_collections';
+  info: {
+    displayName: 'Product Collection';
+    pluralName: 'product-collections';
+    singularName: 'product-collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    collectionBanner: Schema.Attribute.Media<'images' | 'files'>;
+    collectionLink: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    featureImage: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-collection.product-collection'
+    > &
+      Schema.Attribute.Private;
+    medusaIdentifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'Star Collections'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1192,6 +1237,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
+      'api::product-collection.product-collection': ApiProductCollectionProductCollection;
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;

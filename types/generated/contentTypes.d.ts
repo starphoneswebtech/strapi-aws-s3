@@ -506,6 +506,36 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProductCategoryProductCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_categories';
+  info: {
+    displayName: 'Product Category';
+    pluralName: 'product-categories';
+    singularName: 'product-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images' | 'files'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-category.product-category'
+    > &
+      Schema.Attribute.Private;
+    metada: Schema.Attribute.Component<'metadata.metadata', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductCollectionProductCollection
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_collections';
@@ -1237,6 +1267,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
+      'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-collection.product-collection': ApiProductCollectionProductCollection;
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;

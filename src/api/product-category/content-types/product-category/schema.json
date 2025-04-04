@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_categories",
+  "info": {
+    "singularName": "product-category",
+    "pluralName": "product-categories",
+    "displayName": "Product Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "metada": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
+    },
+    "banner": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}

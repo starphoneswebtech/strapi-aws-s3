@@ -73,6 +73,15 @@ export interface ProductCollectionProductCollections
   };
 }
 
+export interface ProductsProductFilters extends Struct.ComponentSchema {
+  collectionName: 'components_products_product_filters';
+  info: {
+    displayName: 'Product Filters';
+    icon: 'bulletList';
+  };
+  attributes: {};
+}
+
 export interface StoreDetailsAboutUs extends Struct.ComponentSchema {
   collectionName: 'components_store_details_aboutuses';
   info: {
@@ -155,6 +164,7 @@ declare module '@strapi/strapi' {
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
       'product-collection.product-collections': ProductCollectionProductCollections;
+      'products.product-filters': ProductsProductFilters;
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;

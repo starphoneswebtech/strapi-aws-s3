@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-category",
     "pluralName": "product-categories",
-    "displayName": "Product Category"
+    "displayName": "Product Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,13 +17,18 @@
       "component": "metadata.metadata"
     },
     "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": false
+      ]
+    },
+    "medusaIdentifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

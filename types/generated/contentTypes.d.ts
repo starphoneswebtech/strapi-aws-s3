@@ -510,6 +510,7 @@ export interface ApiProductCategoryProductCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_categories';
   info: {
+    description: '';
     displayName: 'Product Category';
     pluralName: 'product-categories';
     singularName: 'product-category';
@@ -528,6 +529,9 @@ export interface ApiProductCategoryProductCategory
       'api::product-category.product-category'
     > &
       Schema.Attribute.Private;
+    medusaIdentifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     metada: Schema.Attribute.Component<'metadata.metadata', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

@@ -581,6 +581,37 @@ export interface ApiProductCollectionProductCollection
   };
 }
 
+export interface ApiProductProduct extends Struct.CollectionTypeSchema {
+  collectionName: 'products';
+  info: {
+    displayName: 'Product';
+    pluralName: 'products';
+    singularName: 'product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    handle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product.product'
+    > &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Struct.CollectionTypeSchema {
   collectionName: 'reviews';
   info: {
@@ -1273,6 +1304,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-collection.product-collection': ApiProductCollectionProductCollection;
+      'api::product.product': ApiProductProduct;
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;

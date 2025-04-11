@@ -718,6 +718,7 @@ export interface ApiStoreLocationStoreLocation
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directionUrl: Schema.Attribute.Text & Schema.Attribute.Required;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

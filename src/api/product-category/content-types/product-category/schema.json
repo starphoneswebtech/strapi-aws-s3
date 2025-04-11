@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "metada": {
+    "metadata": {
       "type": "component",
       "repeatable": false,
       "component": "metadata.metadata"

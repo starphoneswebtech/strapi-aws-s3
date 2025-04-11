@@ -77,6 +77,11 @@
       "relation": "oneToOne",
       "target": "api::store-page-detail.store-page-detail",
       "inversedBy": "store_location"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
     }
   }
 }

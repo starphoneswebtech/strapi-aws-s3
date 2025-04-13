@@ -472,8 +472,9 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.Text &
+    question: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'What types of mobile phone accessories do you offer?'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -667,8 +668,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    faqs: Schema.Attribute.Component<'faq.faq', true> &
-      Schema.Attribute.Required;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'

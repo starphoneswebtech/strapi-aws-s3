@@ -12,9 +12,9 @@
   },
   "attributes": {
     "question": {
-      "type": "text",
+      "type": "string",
       "required": true,
-      "unique": false,
+      "unique": true,
       "default": "What types of mobile phone accessories do you offer?"
     },
     "answer": {

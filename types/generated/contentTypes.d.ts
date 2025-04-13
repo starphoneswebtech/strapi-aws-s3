@@ -532,7 +532,7 @@ export interface ApiProductCategoryProductCategory
     medusaIdentifier: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    metada: Schema.Attribute.Component<'metadata.metadata', false>;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -667,6 +667,8 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    faqs: Schema.Attribute.Component<'faq.faq', true> &
+      Schema.Attribute.Required;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'

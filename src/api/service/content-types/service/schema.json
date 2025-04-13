@@ -92,6 +92,12 @@
         "videos",
         "audios"
       ]
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq",
+      "required": true
     }
   }
 }

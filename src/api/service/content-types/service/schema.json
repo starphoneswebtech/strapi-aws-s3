@@ -94,10 +94,9 @@
       ]
     },
     "faqs": {
-      "type": "component",
-      "repeatable": true,
-      "component": "faq.faq",
-      "required": true
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
     }
   }
 }

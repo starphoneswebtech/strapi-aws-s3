@@ -82,6 +82,22 @@ export interface ProductsProductFilters extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface ServiceServiceFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_service_service_features';
+  info: {
+    displayName: 'ServiceFeatures';
+    icon: 'doctor';
+  };
+  attributes: {
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    markdown: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface StoreDetailsAboutUs extends Struct.ComponentSchema {
   collectionName: 'components_store_details_aboutuses';
   info: {
@@ -165,6 +181,7 @@ declare module '@strapi/strapi' {
       'metadata.metadata': MetadataMetadata;
       'product-collection.product-collections': ProductCollectionProductCollections;
       'products.product-filters': ProductsProductFilters;
+      'service.service-features': ServiceServiceFeatures;
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;

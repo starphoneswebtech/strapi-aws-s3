@@ -97,6 +97,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "serviceFeature": {
+      "displayName": "ServiceFeatures",
+      "type": "component",
+      "repeatable": false,
+      "component": "service.service-features"
     }
   }
 }

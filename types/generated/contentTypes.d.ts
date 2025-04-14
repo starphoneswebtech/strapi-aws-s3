@@ -691,6 +691,10 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     primaryButtonName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    serviceFeature: Schema.Attribute.Component<
+      'service.service-features',
+      false
+    >;
     serviceTitle: Schema.Attribute.String;
     shortDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &

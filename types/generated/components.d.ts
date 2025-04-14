@@ -85,10 +85,12 @@ export interface ProductsProductFilters extends Struct.ComponentSchema {
 export interface ServiceServiceFeatures extends Struct.ComponentSchema {
   collectionName: 'components_service_service_features';
   info: {
+    description: '';
     displayName: 'ServiceFeatures';
     icon: 'doctor';
   };
   attributes: {
+    button: Schema.Attribute.String;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;

@@ -2,7 +2,8 @@
   "collectionName": "components_service_service_features",
   "info": {
     "displayName": "ServiceFeatures",
-    "icon": "doctor"
+    "icon": "doctor",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,14 +18,18 @@
       "type": "string"
     },
     "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "button": {
+      "type": "string"
     }
   }
 }

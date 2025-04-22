@@ -507,6 +507,34 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMarqueeMarquee extends Struct.CollectionTypeSchema {
+  collectionName: 'marquees';
+  info: {
+    displayName: 'Marquee';
+    pluralName: 'marquees';
+    singularName: 'marquee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marquee.marquee'
+    > &
+      Schema.Attribute.Private;
+    marquee: Schema.Attribute.Component<'marquee.marquee', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductCategoryProductCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_categories';
@@ -1309,6 +1337,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
+      'api::marquee.marquee': ApiMarqueeMarquee;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-collection.product-collection': ApiProductCollectionProductCollection;
       'api::product.product': ApiProductProduct;

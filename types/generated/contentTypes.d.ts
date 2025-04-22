@@ -527,7 +527,6 @@ export interface ApiMarqueeMarquee extends Struct.CollectionTypeSchema {
       'api::marquee.marquee'
     > &
       Schema.Attribute.Private;
-    marquee: Schema.Attribute.Component<'marquee.marquee', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

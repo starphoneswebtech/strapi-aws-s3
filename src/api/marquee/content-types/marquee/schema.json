@@ -4,16 +4,25 @@
   "info": {
     "singularName": "marquee",
     "pluralName": "marquees",
-    "displayName": "Marquee"
+    "displayName": "Marquee",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "marquee": {
-      "type": "component",
-      "repeatable": false,
-      "component": "marquee.marquee"
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

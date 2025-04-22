@@ -42,6 +42,20 @@ export interface LocationLocation extends Struct.ComponentSchema {
   };
 }
 
+export interface MarqueeMarquee extends Struct.ComponentSchema {
+  collectionName: 'components_marquee_marquees';
+  info: {
+    displayName: 'Marquee';
+    icon: 'play';
+  };
+  attributes: {
+    identifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    images: Schema.Attribute.Media<'images' | 'files', true>;
+  };
+}
+
 export interface MetadataMetadata extends Struct.ComponentSchema {
   collectionName: 'components_metadata_metadata';
   info: {
@@ -180,6 +194,7 @@ declare module '@strapi/strapi' {
       'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;
       'location.location': LocationLocation;
+      'marquee.marquee': MarqueeMarquee;
       'metadata.metadata': MetadataMetadata;
       'product-collection.product-collections': ProductCollectionProductCollections;
       'products.product-filters': ProductsProductFilters;

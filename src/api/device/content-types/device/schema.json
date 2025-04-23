@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "singularName": "device",
+    "pluralName": "devices",
+    "displayName": "Device"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
+    }
+  }
+}

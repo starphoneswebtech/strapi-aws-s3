@@ -768,6 +768,34 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
+  collectionName: 'slides';
+  info: {
+    displayName: 'Slide';
+    pluralName: 'slides';
+    singularName: 'slide';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desktop: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::slide.slide'> &
+      Schema.Attribute.Private;
+    mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStoreLocationStoreLocation
   extends Struct.CollectionTypeSchema {
   collectionName: 'store_locations';
@@ -1379,6 +1407,7 @@ declare module '@strapi/strapi' {
       'api::product.product': ApiProductProduct;
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;
+      'api::slide.slide': ApiSlideSlide;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;
       'api::store-page-detail.store-page-detail': ApiStorePageDetailStorePageDetail;
       'plugin::content-releases.release': PluginContentReleasesRelease;

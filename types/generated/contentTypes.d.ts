@@ -609,6 +609,7 @@ export interface ApiProductCollectionProductCollection
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_collections';
   info: {
+    description: '';
     displayName: 'Product Collection';
     pluralName: 'product-collections';
     singularName: 'product-collection';
@@ -634,6 +635,10 @@ export interface ApiProductCollectionProductCollection
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    product_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-category.product-category'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
     title: Schema.Attribute.String &

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-collection",
     "pluralName": "product-collections",
-    "displayName": "Product Collection"
+    "displayName": "Product Collection",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,20 +22,22 @@
       "required": true
     },
     "collectionBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "medusaIdentifier": {
       "type": "string",
@@ -51,6 +54,11 @@
       "type": "component",
       "repeatable": false,
       "component": "metadata.metadata"
+    },
+    "product_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-category.product-category"
     }
   }
 }

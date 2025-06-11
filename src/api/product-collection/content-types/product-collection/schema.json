@@ -59,6 +59,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product-category.product-category"
+    },
+    "featured_devices": {
+      "displayName": "device_collection",
+      "type": "component",
+      "repeatable": false,
+      "component": "device-collection.device-collection"
     }
   }
 }

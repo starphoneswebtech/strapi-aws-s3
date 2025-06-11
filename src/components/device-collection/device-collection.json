@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_device_collection_device_collections",
+  "info": {
+    "displayName": "device_collection"
+  },
+  "options": {},
+  "attributes": {
+    "Solo_1": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "Solo_2": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "link2": {
+      "type": "string",
+      "required": true
+    },
+    "duo_1": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "duo_2": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link_duo_1": {
+      "type": "string",
+      "required": true
+    },
+    "link_duo_2": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -624,6 +624,10 @@ export interface ApiProductCollectionProductCollection
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    featured_devices: Schema.Attribute.Component<
+      'device-collection.device-collection',
+      false
+    >;
     featureImage: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

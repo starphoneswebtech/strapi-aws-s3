@@ -15,7 +15,7 @@ export interface DeviceCollectionDeviceCollection
     featured_model_img: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     featured_model_ptype: Schema.Attribute.String & Schema.Attribute.Required;
-    filter: Schema.Attribute.Text & Schema.Attribute.Required;
+    filter_string: Schema.Attribute.Text & Schema.Attribute.Required;
     link: Schema.Attribute.String & Schema.Attribute.Required;
     link_duo_1: Schema.Attribute.String & Schema.Attribute.Required;
     link_duo_2: Schema.Attribute.String & Schema.Attribute.Required;

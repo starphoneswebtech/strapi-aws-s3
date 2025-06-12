@@ -78,6 +78,10 @@
     "featured_model_button_name": {
       "type": "string",
       "required": true
+    },
+    "featured_model_button_link": {
+      "type": "string",
+      "required": true
     }
   }
 }

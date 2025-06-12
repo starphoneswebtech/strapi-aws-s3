@@ -10,6 +10,8 @@ export interface DeviceCollectionDeviceCollection
   attributes: {
     duo_1: Schema.Attribute.Media<'images' | 'files'>;
     duo_2: Schema.Attribute.Media<'files' | 'images'>;
+    featured_model_button_link: Schema.Attribute.String &
+      Schema.Attribute.Required;
     featured_model_button_name: Schema.Attribute.String &
       Schema.Attribute.Required;
     featured_model_img: Schema.Attribute.Media<'images' | 'files'> &

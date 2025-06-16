@@ -781,6 +781,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
 export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
   collectionName: 'slides';
   info: {
+    description: '';
     displayName: 'Slide';
     pluralName: 'slides';
     singularName: 'slide';
@@ -799,6 +800,7 @@ export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::slide.slide'> &
       Schema.Attribute.Private;
     mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

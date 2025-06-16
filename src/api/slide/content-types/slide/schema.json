@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slide",
     "pluralName": "slides",
-    "displayName": "Slide"
+    "displayName": "Slide",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,21 +16,24 @@
       "required": true
     },
     "desktop": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "mobile": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

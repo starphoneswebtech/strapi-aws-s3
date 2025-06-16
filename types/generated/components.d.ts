@@ -1,5 +1,34 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface DeviceCollectionDeviceCollection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_device_collection_device_collections';
+  info: {
+    description: '';
+    displayName: 'device_collection';
+  };
+  attributes: {
+    duo_1: Schema.Attribute.Media<'images' | 'files'>;
+    duo_2: Schema.Attribute.Media<'files' | 'images'>;
+    featured_model_button_link: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    featured_model_button_name: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    featured_model_img: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    featured_model_ptype: Schema.Attribute.String & Schema.Attribute.Required;
+    filter_string: Schema.Attribute.Text & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    link_duo_1: Schema.Attribute.String & Schema.Attribute.Required;
+    link_duo_2: Schema.Attribute.String & Schema.Attribute.Required;
+    link2: Schema.Attribute.String & Schema.Attribute.Required;
+    Solo_1: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
+    Solo_2: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface FaqFaq extends Struct.ComponentSchema {
   collectionName: 'components_faq_faqs';
   info: {
@@ -177,6 +206,7 @@ export interface ViewportViewport extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'device-collection.device-collection': DeviceCollectionDeviceCollection;
       'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;
       'location.location': LocationLocation;

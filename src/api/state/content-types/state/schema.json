@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "states",
+  "info": {
+    "singularName": "state",
+    "pluralName": "states",
+    "displayName": "State"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "regex": "^[A-Za-z-]+$"
+    },
+    "featuredImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

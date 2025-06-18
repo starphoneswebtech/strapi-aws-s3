@@ -811,6 +811,7 @@ export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
 export interface ApiStateState extends Struct.CollectionTypeSchema {
   collectionName: 'states';
   info: {
+    description: '';
     displayName: 'State';
     pluralName: 'states';
     singularName: 'state';
@@ -831,6 +832,10 @@ export interface ApiStateState extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::state.state'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    store_locations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::store-location.store-location'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "state",
     "pluralName": "states",
-    "displayName": "State"
+    "displayName": "State",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,13 +24,18 @@
       "regex": "^[A-Za-z-]+$"
     },
     "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "store_locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::store-location.store-location"
     }
   }
 }

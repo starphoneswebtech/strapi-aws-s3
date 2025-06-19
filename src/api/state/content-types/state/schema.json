@@ -39,6 +39,11 @@
     },
     "rank": {
       "type": "integer"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
     }
   }
 }

@@ -825,6 +825,7 @@ export interface ApiStateState extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     featuredImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     handle: Schema.Attribute.String & Schema.Attribute.Required;

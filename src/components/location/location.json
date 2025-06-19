@@ -12,6 +12,9 @@
     },
     "lng": {
       "type": "string"
+    },
+    "defaultZoom": {
+      "type": "decimal"
     }
   }
 }

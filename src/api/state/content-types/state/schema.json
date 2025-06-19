@@ -44,6 +44,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "overview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "store-details.about-us"
     }
   }
 }

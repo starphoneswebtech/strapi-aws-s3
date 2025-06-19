@@ -49,6 +49,11 @@
       "type": "component",
       "repeatable": false,
       "component": "store-details.about-us"
+    },
+    "defaultCenter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "geometry.geometry"
     }
   }
 }

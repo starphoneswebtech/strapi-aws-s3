@@ -49,12 +49,12 @@ export interface FaqFaq extends Struct.ComponentSchema {
 export interface GeometryGeometry extends Struct.ComponentSchema {
   collectionName: 'components_geometry_geometries';
   info: {
+    description: '';
     displayName: 'geometry';
     icon: 'pinMap';
   };
   attributes: {
     location: Schema.Attribute.Component<'location.location', false>;
-    viewport: Schema.Attribute.Component<'viewport.viewport', false>;
   };
 }
 

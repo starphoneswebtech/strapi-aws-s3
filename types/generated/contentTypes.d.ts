@@ -832,6 +832,7 @@ export interface ApiStateState extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::state.state'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
     store_locations: Schema.Attribute.Relation<
       'oneToMany',
       'api::store-location.store-location'

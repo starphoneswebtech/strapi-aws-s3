@@ -34,6 +34,22 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
     }
   }
 }

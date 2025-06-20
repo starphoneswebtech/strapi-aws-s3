@@ -588,6 +588,7 @@ export interface ApiProductCategoryProductCategory
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    featureImage: Schema.Attribute.Media<'files' | 'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -599,6 +600,7 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

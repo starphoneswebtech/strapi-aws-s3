@@ -599,6 +599,7 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;

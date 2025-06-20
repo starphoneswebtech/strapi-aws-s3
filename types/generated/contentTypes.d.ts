@@ -808,6 +808,45 @@ export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStateState extends Struct.CollectionTypeSchema {
+  collectionName: 'states';
+  info: {
+    description: '';
+    displayName: 'State';
+    pluralName: 'states';
+    singularName: 'state';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    defaultCenter: Schema.Attribute.Component<'geometry.geometry', false>;
+    description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    featuredImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    handle: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::state.state'> &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    overview: Schema.Attribute.Component<'store-details.about-us', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    store_locations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::store-location.store-location'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStoreLocationStoreLocation
   extends Struct.CollectionTypeSchema {
   collectionName: 'store_locations';
@@ -1420,6 +1459,7 @@ declare module '@strapi/strapi' {
       'api::review.review': ApiReviewReview;
       'api::service.service': ApiServiceService;
       'api::slide.slide': ApiSlideSlide;
+      'api::state.state': ApiStateState;
       'api::store-location.store-location': ApiStoreLocationStoreLocation;
       'api::store-page-detail.store-page-detail': ApiStorePageDetailStorePageDetail;
       'plugin::content-releases.release': PluginContentReleasesRelease;

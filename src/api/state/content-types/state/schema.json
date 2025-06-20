@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "states",
+  "info": {
+    "singularName": "state",
+    "pluralName": "states",
+    "displayName": "State",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "handle": {
+      "type": "string",
+      "required": true,
+      "regex": "^[A-Za-z-]+$"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "store_locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::store-location.store-location"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    },
+    "overview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "store-details.about-us"
+    },
+    "defaultCenter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "geometry.geometry"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
+    }
+  }
+}

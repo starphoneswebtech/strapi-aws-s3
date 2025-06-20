@@ -54,6 +54,11 @@
       "type": "component",
       "repeatable": false,
       "component": "geometry.geometry"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
     }
   }
 }

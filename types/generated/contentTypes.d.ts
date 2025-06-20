@@ -833,6 +833,7 @@ export interface ApiStateState extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::state.state'> &
       Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     overview: Schema.Attribute.Component<'store-details.about-us', false>;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;

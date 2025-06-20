@@ -66,6 +66,7 @@ export interface LocationLocation extends Struct.ComponentSchema {
     icon: 'pinMap';
   };
   attributes: {
+    defaultZoom: Schema.Attribute.Decimal;
     lat: Schema.Attribute.String;
     lng: Schema.Attribute.String;
   };

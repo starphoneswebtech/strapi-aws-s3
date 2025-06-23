@@ -388,6 +388,9 @@ export interface ApiBestSellerProductBestSellerProduct
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     handle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -395,7 +398,7 @@ export interface ApiBestSellerProductBestSellerProduct
       'api::best-seller-product.best-seller-product'
     > &
       Schema.Attribute.Private;
-    product_id: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

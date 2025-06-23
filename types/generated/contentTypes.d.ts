@@ -373,6 +373,7 @@ export interface ApiBestSellerProductBestSellerProduct
   extends Struct.CollectionTypeSchema {
   collectionName: 'best_seller_products';
   info: {
+    description: '';
     displayName: 'Best Seller Product';
     pluralName: 'best-seller-products';
     singularName: 'best-seller-product';
@@ -381,16 +382,20 @@ export interface ApiBestSellerProductBestSellerProduct
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    handle: Schema.Attribute.String & Schema.Attribute.Required;
+    handle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::best-seller-product.best-seller-product'
     > &
       Schema.Attribute.Private;
+    product_id: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

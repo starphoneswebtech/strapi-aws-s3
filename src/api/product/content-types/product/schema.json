@@ -20,10 +20,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "best_seller": {
-      "type": "boolean",
-      "default": false
     }
   }
 }

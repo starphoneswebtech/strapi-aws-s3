@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "best_seller_products",
+  "info": {
+    "singularName": "best-seller-product",
+    "pluralName": "best-seller-products",
+    "displayName": "Best Seller Product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "handle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

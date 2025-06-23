@@ -18,13 +18,23 @@
       "type": "string",
       "required": false
     },
-    "product_id": {
-      "type": "string",
-      "required": true
-    },
     "active": {
       "type": "boolean",
       "default": false,
+      "required": true
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "price": {
+      "type": "decimal",
       "required": true
     }
   }

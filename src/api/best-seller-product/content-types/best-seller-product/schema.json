@@ -4,7 +4,8 @@
   "info": {
     "singularName": "best-seller-product",
     "pluralName": "best-seller-products",
-    "displayName": "Best Seller Product"
+    "displayName": "Best Seller Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,15 @@
     },
     "handle": {
       "type": "string",
+      "required": false
+    },
+    "product_id": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }

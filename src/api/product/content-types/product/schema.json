@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,10 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "best_seller": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

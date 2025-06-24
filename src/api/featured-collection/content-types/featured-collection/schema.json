@@ -4,33 +4,32 @@
   "info": {
     "singularName": "featured-collection",
     "pluralName": "featured-collections",
-    "displayName": "Featured Collection",
-    "description": ""
+    "displayName": "Featured Collection"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
     "product_collection": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product-collection.product-collection"
     },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "rank": {
       "type": "integer"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

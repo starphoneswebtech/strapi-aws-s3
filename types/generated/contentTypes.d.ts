@@ -552,43 +552,6 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFeaturedCollectionFeaturedCollection
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'featured_collections';
-  info: {
-    description: '';
-    displayName: 'Featured Collection';
-    pluralName: 'featured-collections';
-    singularName: 'featured-collection';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::featured-collection.featured-collection'
-    > &
-      Schema.Attribute.Private;
-    product_collection: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::product-collection.product-collection'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    rank: Schema.Attribute.Integer;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -1532,7 +1495,6 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::device.device': ApiDeviceDevice;
       'api::faq.faq': ApiFaqFaq;
-      'api::featured-collection.featured-collection': ApiFeaturedCollectionFeaturedCollection;
       'api::home.home': ApiHomeHome;
       'api::marquee.marquee': ApiMarqueeMarquee;
       'api::product-category.product-category': ApiProductCategoryProductCategory;

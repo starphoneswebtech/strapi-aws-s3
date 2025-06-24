@@ -24,13 +24,13 @@
       "type": "integer"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     }
   }
 }

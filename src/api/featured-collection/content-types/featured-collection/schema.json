@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_collections",
+  "info": {
+    "singularName": "featured-collection",
+    "pluralName": "featured-collections",
+    "displayName": "Featured Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "collection": {
+      "displayName": "featured collection",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-collection.featured-collection"
+    }
+  }
+}

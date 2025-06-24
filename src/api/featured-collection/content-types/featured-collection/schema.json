@@ -11,11 +11,26 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "collection": {
-      "displayName": "featured collection",
-      "type": "component",
-      "repeatable": true,
-      "component": "product-collection.featured-collection"
+    "product_collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-collection.product-collection"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

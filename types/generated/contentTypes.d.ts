@@ -388,6 +388,9 @@ export interface ApiBestSellerProductBestSellerProduct
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     handle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -395,8 +398,9 @@ export interface ApiBestSellerProductBestSellerProduct
       'api::best-seller-product.best-seller-product'
     > &
       Schema.Attribute.Private;
-    product_id: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -542,6 +546,42 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'What types of mobile phone accessories do you offer?'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeaturedCollectionFeaturedCollection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'featured_collections';
+  info: {
+    displayName: 'Featured Collection';
+    pluralName: 'featured-collections';
+    singularName: 'featured-collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::featured-collection.featured-collection'
+    > &
+      Schema.Attribute.Private;
+    product_collection: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-collection.product-collection'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1491,6 +1531,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::device.device': ApiDeviceDevice;
       'api::faq.faq': ApiFaqFaq;
+      'api::featured-collection.featured-collection': ApiFeaturedCollectionFeaturedCollection;
       'api::home.home': ApiHomeHome;
       'api::marquee.marquee': ApiMarqueeMarquee;
       'api::product-category.product-category': ApiProductCategoryProductCategory;

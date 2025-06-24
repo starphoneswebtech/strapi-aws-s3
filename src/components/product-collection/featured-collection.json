@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_product_collection_featured_collections",
+  "info": {
+    "displayName": "featured collection"
+  },
+  "options": {},
+  "attributes": {
+    "product_collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-collection.product-collection"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

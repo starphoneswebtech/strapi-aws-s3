@@ -85,6 +85,23 @@ export interface MetadataMetadata extends Struct.ComponentSchema {
   };
 }
 
+export interface ProductCollectionFeaturedCollection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_product_collection_featured_collections';
+  info: {
+    displayName: 'featured collection';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    product_collection: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-collection.product-collection'
+    >;
+    rank: Schema.Attribute.Integer;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ProductCollectionProductCollections
   extends Struct.ComponentSchema {
   collectionName: 'components_product_collection_product_collections';
@@ -212,6 +229,7 @@ declare module '@strapi/strapi' {
       'geometry.geometry': GeometryGeometry;
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
+      'product-collection.featured-collection': ProductCollectionFeaturedCollection;
       'product-collection.product-collections': ProductCollectionProductCollections;
       'products.product-filters': ProductsProductFilters;
       'service.service-features': ServiceServiceFeatures;

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_collections",
+  "info": {
+    "singularName": "featured-collection",
+    "pluralName": "featured-collections",
+    "displayName": "Featured Collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "product_collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-collection.product-collection"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

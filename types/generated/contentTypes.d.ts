@@ -660,6 +660,7 @@ export interface ApiNewServiceNewService extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     featuredServices: Schema.Attribute.Component<
       'service.featured-services',
       false

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_service_icon_and_texts",
+  "info": {
+    "displayName": "iconAndText"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Star",
+        "Zap",
+        "Battery",
+        "Phone",
+        "Clock",
+        "Shield",
+        "CheckCircle",
+        "MapPin"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_service_features",
+  "info": {
+    "displayName": "feature"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Star",
+        "Zap",
+        "Battery",
+        "Phone",
+        "Clock",
+        "Shield",
+        "CheckCircle",
+        "MapPin"
+      ],
+      "required": true,
+      "default": "Star"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

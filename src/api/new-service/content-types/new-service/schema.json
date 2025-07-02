@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_services",
+  "info": {
+    "singularName": "new-service",
+    "pluralName": "new-services",
+    "displayName": "New Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "serviceHero": {
+      "displayName": "serviceHero",
+      "type": "component",
+      "repeatable": false,
+      "component": "service.service-hero"
+    },
+    "featuredServices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.featured-services"
+    },
+    "handle": {
+      "type": "string",
+      "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
+    }
+  }
+}

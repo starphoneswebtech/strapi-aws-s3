@@ -129,6 +129,135 @@ export interface ProductsProductFilters extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface ServiceFeature extends Struct.ComponentSchema {
+  collectionName: 'components_service_features';
+  info: {
+    displayName: 'feature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Star'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceFeaturedServices extends Struct.ComponentSchema {
+  collectionName: 'components_service_featured_services';
+  info: {
+    displayName: 'featuredServices';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    feature: Schema.Attribute.Component<'service.feature', true>;
+    footerText: Schema.Attribute.Text;
+    heroFeatureImage: Schema.Attribute.Component<
+      'service.hero-feature-image',
+      false
+    >;
+    primaryButton: Schema.Attribute.Component<'service.primary-button', false>;
+    secondaryButton: Schema.Attribute.Component<
+      'service.secondary-button',
+      false
+    >;
+    title: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceHeroFeatureImage extends Struct.ComponentSchema {
+  collectionName: 'components_service_hero_feature_images';
+  info: {
+    displayName: 'heroFeatureImage';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'files' | 'images'>;
+    tag: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceIconAndText extends Struct.ComponentSchema {
+  collectionName: 'components_service_icon_and_texts';
+  info: {
+    displayName: 'iconAndText';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    > &
+      Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServicePrimaryButton extends Struct.ComponentSchema {
+  collectionName: 'components_service_primary_buttons';
+  info: {
+    description: '';
+    displayName: 'primaryButton';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceSecondaryButton extends Struct.ComponentSchema {
+  collectionName: 'components_service_secondary_buttons';
+  info: {
+    description: '';
+    displayName: 'secondaryButton';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ServiceServiceFeatures extends Struct.ComponentSchema {
   collectionName: 'components_service_service_features';
   info: {
@@ -144,6 +273,28 @@ export interface ServiceServiceFeatures extends Struct.ComponentSchema {
     markdown: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceServiceHero extends Struct.ComponentSchema {
+  collectionName: 'components_service_service_heroes';
+  info: {
+    description: '';
+    displayName: 'serviceHero';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    headerIconTitle: Schema.Attribute.Component<'service.icon-and-text', false>;
+    heroFeatureImage: Schema.Attribute.Component<
+      'service.hero-feature-image',
+      false
+    >;
+    primaryButton: Schema.Attribute.Component<'service.primary-button', false>;
+    secondaryButton: Schema.Attribute.Component<
+      'service.secondary-button',
+      false
+    >;
+    title: Schema.Attribute.Blocks;
   };
 }
 
@@ -232,7 +383,14 @@ declare module '@strapi/strapi' {
       'product-collection.featured-collection': ProductCollectionFeaturedCollection;
       'product-collection.product-collections': ProductCollectionProductCollections;
       'products.product-filters': ProductsProductFilters;
+      'service.feature': ServiceFeature;
+      'service.featured-services': ServiceFeaturedServices;
+      'service.hero-feature-image': ServiceHeroFeatureImage;
+      'service.icon-and-text': ServiceIconAndText;
+      'service.primary-button': ServicePrimaryButton;
+      'service.secondary-button': ServiceSecondaryButton;
       'service.service-features': ServiceServiceFeatures;
+      'service.service-hero': ServiceServiceHero;
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;

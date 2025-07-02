@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_service_secondary_buttons",
+  "info": {
+    "displayName": "secondaryButton",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Star",
+        "Zap",
+        "Battery",
+        "Phone",
+        "Clock",
+        "Shield",
+        "CheckCircle",
+        "MapPin"
+      ]
+    }
+  }
+}

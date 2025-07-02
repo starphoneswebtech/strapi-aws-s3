@@ -645,6 +645,39 @@ export interface ApiMarqueeMarquee extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNewServiceNewService extends Struct.CollectionTypeSchema {
+  collectionName: 'new_services';
+  info: {
+    displayName: 'New Service';
+    pluralName: 'new-services';
+    singularName: 'new-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featuredServices: Schema.Attribute.Component<
+      'service.featured-services',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-service.new-service'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    serviceHero: Schema.Attribute.Component<'service.service-hero', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductCategoryProductCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_categories';
@@ -1534,6 +1567,7 @@ declare module '@strapi/strapi' {
       'api::featured-collection.featured-collection': ApiFeaturedCollectionFeaturedCollection;
       'api::home.home': ApiHomeHome;
       'api::marquee.marquee': ApiMarqueeMarquee;
+      'api::new-service.new-service': ApiNewServiceNewService;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product-collection.product-collection': ApiProductCollectionProductCollection;
       'api::product.product': ApiProductProduct;

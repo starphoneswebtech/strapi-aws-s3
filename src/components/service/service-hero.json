@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_service_service_heroes",
+  "info": {
+    "displayName": "serviceHero"
+  },
+  "options": {},
+  "attributes": {
+    "headerIconTitle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.icon-and-text"
+    },
+    "title": {
+      "type": "blocks"
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.primary-button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.secondary-button"
+    },
+    "heroFeatureImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.hero-feature-image"
+    }
+  }
+}

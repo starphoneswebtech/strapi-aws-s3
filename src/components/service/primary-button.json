@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_service_primary_buttons",
+  "info": {
+    "displayName": "primaryButton"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

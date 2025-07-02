@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_service_secondary_buttons",
+  "info": {
+    "displayName": "secondaryButton"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

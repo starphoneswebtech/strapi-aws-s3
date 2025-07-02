@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_service_featured_services",
+  "info": {
+    "displayName": "featuredServices"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "blocks",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "feature": {
+      "displayName": "feature",
+      "type": "component",
+      "repeatable": true,
+      "component": "service.feature"
+    },
+    "footerText": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.primary-button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.secondary-button"
+    },
+    "heroFeatureImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service.hero-feature-image"
+    }
+  }
+}

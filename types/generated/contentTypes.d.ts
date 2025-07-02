@@ -648,6 +648,7 @@ export interface ApiMarqueeMarquee extends Struct.CollectionTypeSchema {
 export interface ApiNewServiceNewService extends Struct.CollectionTypeSchema {
   collectionName: 'new_services';
   info: {
+    description: '';
     displayName: 'New Service';
     pluralName: 'new-services';
     singularName: 'new-service';

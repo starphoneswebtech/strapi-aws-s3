@@ -213,9 +213,22 @@ export interface ServiceIconAndText extends Struct.ComponentSchema {
 export interface ServicePrimaryButton extends Struct.ComponentSchema {
   collectionName: 'components_service_primary_buttons';
   info: {
+    description: '';
     displayName: 'primaryButton';
   };
   attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -224,9 +237,22 @@ export interface ServicePrimaryButton extends Struct.ComponentSchema {
 export interface ServiceSecondaryButton extends Struct.ComponentSchema {
   collectionName: 'components_service_secondary_buttons';
   info: {
+    description: '';
     displayName: 'secondaryButton';
   };
   attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Star',
+        'Zap',
+        'Battery',
+        'Phone',
+        'Clock',
+        'Shield',
+        'CheckCircle',
+        'MapPin',
+      ]
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -253,11 +279,12 @@ export interface ServiceServiceFeatures extends Struct.ComponentSchema {
 export interface ServiceServiceHero extends Struct.ComponentSchema {
   collectionName: 'components_service_service_heroes';
   info: {
+    description: '';
     displayName: 'serviceHero';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    headerIconTitle: Schema.Attribute.Component<'service.icon-and-text', true>;
+    headerIconTitle: Schema.Attribute.Component<'service.icon-and-text', false>;
     heroFeatureImage: Schema.Attribute.Component<
       'service.hero-feature-image',
       false

@@ -25,6 +25,10 @@
       "type": "component",
       "repeatable": false,
       "component": "service.featured-services"
+    },
+    "handle": {
+      "type": "string",
+      "required": true
     }
   }
 }

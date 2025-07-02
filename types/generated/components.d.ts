@@ -132,6 +132,7 @@ export interface ProductsProductFilters extends Struct.ComponentSchema {
 export interface ServiceFeature extends Struct.ComponentSchema {
   collectionName: 'components_service_features';
   info: {
+    description: '';
     displayName: 'feature';
   };
   attributes: {
@@ -146,6 +147,7 @@ export interface ServiceFeature extends Struct.ComponentSchema {
         'Shield',
         'CheckCircle',
         'MapPin',
+        'CalendarDays',
       ]
     > &
       Schema.Attribute.Required &
@@ -192,6 +194,7 @@ export interface ServiceHeroFeatureImage extends Struct.ComponentSchema {
 export interface ServiceIconAndText extends Struct.ComponentSchema {
   collectionName: 'components_service_icon_and_texts';
   info: {
+    description: '';
     displayName: 'iconAndText';
   };
   attributes: {
@@ -205,6 +208,7 @@ export interface ServiceIconAndText extends Struct.ComponentSchema {
         'Shield',
         'CheckCircle',
         'MapPin',
+        'CalendarDays',
       ]
     > &
       Schema.Attribute.Required;
@@ -229,6 +233,7 @@ export interface ServicePrimaryButton extends Struct.ComponentSchema {
         'Shield',
         'CheckCircle',
         'MapPin',
+        'CalendarDays',
       ]
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -253,6 +258,7 @@ export interface ServiceSecondaryButton extends Struct.ComponentSchema {
         'Shield',
         'CheckCircle',
         'MapPin',
+        'CalendarDays',
       ]
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;

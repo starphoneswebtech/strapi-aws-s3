@@ -157,6 +157,7 @@ export interface ServiceFeature extends Struct.ComponentSchema {
 export interface ServiceFeaturedServices extends Struct.ComponentSchema {
   collectionName: 'components_service_featured_services';
   info: {
+    description: '';
     displayName: 'featuredServices';
   };
   attributes: {
@@ -172,6 +173,7 @@ export interface ServiceFeaturedServices extends Struct.ComponentSchema {
       'service.secondary-button',
       false
     >;
+    tag: Schema.Attribute.String;
     title: Schema.Attribute.Blocks & Schema.Attribute.Required;
   };
 }

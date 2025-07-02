@@ -24,7 +24,8 @@
         "Clock",
         "Shield",
         "CheckCircle",
-        "MapPin"
+        "MapPin",
+        "CalendarDays"
       ]
     }
   }

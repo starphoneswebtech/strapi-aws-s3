@@ -1,13 +1,14 @@
 {
   "collectionName": "components_service_service_heroes",
   "info": {
-    "displayName": "serviceHero"
+    "displayName": "serviceHero",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "headerIconTitle": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "service.icon-and-text"
     },
     "title": {

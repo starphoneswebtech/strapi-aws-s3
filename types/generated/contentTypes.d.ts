@@ -664,12 +664,14 @@ export interface ApiNewServiceNewService extends Struct.CollectionTypeSchema {
       'service.featured-services',
       false
     >;
+    handle: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::new-service.new-service'
     > &
       Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     publishedAt: Schema.Attribute.DateTime;
     serviceHero: Schema.Attribute.Component<'service.service-hero', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;

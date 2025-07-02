@@ -29,6 +29,11 @@
     "handle": {
       "type": "string",
       "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.metadata"
     }
   }
 }

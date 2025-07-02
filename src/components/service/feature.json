@@ -1,7 +1,8 @@
 {
   "collectionName": "components_service_features",
   "info": {
-    "displayName": "feature"
+    "displayName": "feature",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,7 +16,8 @@
         "Clock",
         "Shield",
         "CheckCircle",
-        "MapPin"
+        "MapPin",
+        "CalendarDays"
       ],
       "required": true,
       "default": "Star"

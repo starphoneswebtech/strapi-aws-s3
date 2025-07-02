@@ -1,7 +1,8 @@
 {
   "collectionName": "components_service_featured_services",
   "info": {
-    "displayName": "featuredServices"
+    "displayName": "featuredServices",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -36,6 +37,9 @@
       "type": "component",
       "repeatable": false,
       "component": "service.hero-feature-image"
+    },
+    "tag": {
+      "type": "string"
     }
   }
 }

@@ -17,6 +17,8 @@
     "icon": {
       "type": "enumeration",
       "enum": [
+        "Activity",
+        "Award",
         "Battery",
         "BatteryCharging",
         "Biohazard",
@@ -26,6 +28,7 @@
         "CircleDollarSign",
         "Clock",
         "Code",
+        "Crosshair",
         "Crown",
         "DatabaseBackup",
         "Droplets",
@@ -36,6 +39,7 @@
         "MapPinPlus",
         "Phone",
         "PlugZap",
+        "ScanSearch",
         "Shield",
         "ShieldCheck",
         "ShieldUser",

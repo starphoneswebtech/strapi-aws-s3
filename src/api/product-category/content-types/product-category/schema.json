@@ -50,6 +50,11 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "new": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

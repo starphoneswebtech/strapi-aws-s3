@@ -712,6 +712,9 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    new: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
@@ -754,6 +757,9 @@ export interface ApiProductCollectionProductCollection
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    new: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     product_category: Schema.Attribute.Relation<
       'oneToOne',
       'api::product-category.product-category'

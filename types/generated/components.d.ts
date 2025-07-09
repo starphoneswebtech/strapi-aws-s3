@@ -58,6 +58,56 @@ export interface GeometryGeometry extends Struct.ComponentSchema {
   };
 }
 
+export interface IconIcon extends Struct.ComponentSchema {
+  collectionName: 'components_icon_icons';
+  info: {
+    displayName: 'Icon';
+    icon: 'picture';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Activity',
+        'Award',
+        'Battery',
+        'BatteryCharging',
+        'Biohazard',
+        'Bubbles',
+        'CalendarDays',
+        'CheckCircle',
+        'CircleDollarSign',
+        'Clock',
+        'Code',
+        'Crosshair',
+        'Crown',
+        'DatabaseBackup',
+        'Droplets',
+        'HardDriveDownload',
+        'HeartPlus',
+        'Laptop',
+        'MapPin',
+        'MapPinPlus',
+        'Phone',
+        'PlugZap',
+        'ScanSearch',
+        'Shield',
+        'ShieldCheck',
+        'ShieldUser',
+        'Smile',
+        'Smartphone',
+        'SmartphoneCharging',
+        'Sparkles',
+        'SquareStack',
+        'Star',
+        'Tablet',
+        'TriangleAlert',
+        'Wrench',
+        'Zap',
+      ]
+    >;
+  };
+}
+
 export interface LocationLocation extends Struct.ComponentSchema {
   collectionName: 'components_location_locations';
   info: {
@@ -139,6 +189,8 @@ export interface ServiceFeature extends Struct.ComponentSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     icon: Schema.Attribute.Enumeration<
       [
+        'Activity',
+        'Award',
         'Battery',
         'BatteryCharging',
         'Biohazard',
@@ -148,6 +200,7 @@ export interface ServiceFeature extends Struct.ComponentSchema {
         'CircleDollarSign',
         'Clock',
         'Code',
+        'Crosshair',
         'Crown',
         'DatabaseBackup',
         'Droplets',
@@ -158,6 +211,7 @@ export interface ServiceFeature extends Struct.ComponentSchema {
         'MapPinPlus',
         'Phone',
         'PlugZap',
+        'ScanSearch',
         'Shield',
         'ShieldCheck',
         'ShieldUser',
@@ -223,6 +277,8 @@ export interface ServiceIconAndText extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Enumeration<
       [
+        'Activity',
+        'Award',
         'Battery',
         'BatteryCharging',
         'Biohazard',
@@ -232,6 +288,7 @@ export interface ServiceIconAndText extends Struct.ComponentSchema {
         'CircleDollarSign',
         'Clock',
         'Code',
+        'Crosshair',
         'Crown',
         'DatabaseBackup',
         'Droplets',
@@ -242,6 +299,7 @@ export interface ServiceIconAndText extends Struct.ComponentSchema {
         'MapPinPlus',
         'Phone',
         'PlugZap',
+        'ScanSearch',
         'Shield',
         'ShieldCheck',
         'ShieldUser',
@@ -271,6 +329,8 @@ export interface ServicePrimaryButton extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Enumeration<
       [
+        'Activity',
+        'Award',
         'Battery',
         'BatteryCharging',
         'Biohazard',
@@ -280,6 +340,7 @@ export interface ServicePrimaryButton extends Struct.ComponentSchema {
         'CircleDollarSign',
         'Clock',
         'Code',
+        'Crosshair',
         'Crown',
         'DatabaseBackup',
         'Droplets',
@@ -290,6 +351,7 @@ export interface ServicePrimaryButton extends Struct.ComponentSchema {
         'MapPinPlus',
         'Phone',
         'PlugZap',
+        'ScanSearch',
         'Shield',
         'ShieldCheck',
         'ShieldUser',
@@ -319,6 +381,8 @@ export interface ServiceSecondaryButton extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Enumeration<
       [
+        'Activity',
+        'Award',
         'Battery',
         'BatteryCharging',
         'Biohazard',
@@ -328,6 +392,7 @@ export interface ServiceSecondaryButton extends Struct.ComponentSchema {
         'CircleDollarSign',
         'Clock',
         'Code',
+        'Crosshair',
         'Crown',
         'DatabaseBackup',
         'Droplets',
@@ -338,6 +403,7 @@ export interface ServiceSecondaryButton extends Struct.ComponentSchema {
         'MapPinPlus',
         'Phone',
         'PlugZap',
+        'ScanSearch',
         'Shield',
         'ShieldCheck',
         'ShieldUser',
@@ -478,6 +544,7 @@ declare module '@strapi/strapi' {
       'device-collection.device-collection': DeviceCollectionDeviceCollection;
       'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;
+      'icon.icon': IconIcon;
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
       'product-collection.featured-collection': ProductCollectionFeaturedCollection;

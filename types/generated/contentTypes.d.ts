@@ -701,6 +701,47 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.Private;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     featureImage: Schema.Attribute.Media<'files' | 'images'>;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Activity',
+        'Award',
+        'Battery',
+        'BatteryCharging',
+        'Biohazard',
+        'Bubbles',
+        'CalendarDays',
+        'CheckCircle',
+        'CircleDollarSign',
+        'Clock',
+        'Code',
+        'Crosshair',
+        'Crown',
+        'DatabaseBackup',
+        'Droplets',
+        'HardDriveDownload',
+        'HeartPlus',
+        'Laptop',
+        'MapPin',
+        'MapPinPlus',
+        'Phone',
+        'PlugZap',
+        'ScanSearch',
+        'Shield',
+        'ShieldCheck',
+        'ShieldUser',
+        'Smile',
+        'Smartphone',
+        'SmartphoneCharging',
+        'Sparkles',
+        'SquareStack',
+        'Star',
+        'Tablet',
+        'TriangleAlert',
+        'Wrench',
+        'Zap',
+      ]
+    >;
+    itemCount: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -717,6 +758,11 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer;
+    shortDescription: Schema.Attribute.Text;
+    text: Schema.Attribute.Component<'tags.tags', true>;
+    trending: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

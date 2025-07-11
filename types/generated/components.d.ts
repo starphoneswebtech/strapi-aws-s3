@@ -58,56 +58,6 @@ export interface GeometryGeometry extends Struct.ComponentSchema {
   };
 }
 
-export interface IconIcon extends Struct.ComponentSchema {
-  collectionName: 'components_icon_icons';
-  info: {
-    displayName: 'Icon';
-    icon: 'picture';
-  };
-  attributes: {
-    icon: Schema.Attribute.Enumeration<
-      [
-        'Activity',
-        'Award',
-        'Battery',
-        'BatteryCharging',
-        'Biohazard',
-        'Bubbles',
-        'CalendarDays',
-        'CheckCircle',
-        'CircleDollarSign',
-        'Clock',
-        'Code',
-        'Crosshair',
-        'Crown',
-        'DatabaseBackup',
-        'Droplets',
-        'HardDriveDownload',
-        'HeartPlus',
-        'Laptop',
-        'MapPin',
-        'MapPinPlus',
-        'Phone',
-        'PlugZap',
-        'ScanSearch',
-        'Shield',
-        'ShieldCheck',
-        'ShieldUser',
-        'Smile',
-        'Smartphone',
-        'SmartphoneCharging',
-        'Sparkles',
-        'SquareStack',
-        'Star',
-        'Tablet',
-        'TriangleAlert',
-        'Wrench',
-        'Zap',
-      ]
-    >;
-  };
-}
-
 export interface LocationLocation extends Struct.ComponentSchema {
   collectionName: 'components_location_locations';
   info: {
@@ -524,6 +474,16 @@ export interface StoreHoursStoreHours extends Struct.ComponentSchema {
   };
 }
 
+export interface TagsTags extends Struct.ComponentSchema {
+  collectionName: 'components_tags_tags';
+  info: {
+    displayName: 'tags';
+  };
+  attributes: {
+    tags: Schema.Attribute.String;
+  };
+}
+
 export interface ViewportViewport extends Struct.ComponentSchema {
   collectionName: 'components_viewport_viewports';
   info: {
@@ -544,7 +504,6 @@ declare module '@strapi/strapi' {
       'device-collection.device-collection': DeviceCollectionDeviceCollection;
       'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;
-      'icon.icon': IconIcon;
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
       'product-collection.featured-collection': ProductCollectionFeaturedCollection;
@@ -561,6 +520,7 @@ declare module '@strapi/strapi' {
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;
+      'tags.tags': TagsTags;
       'viewport.viewport': ViewportViewport;
     }
   }

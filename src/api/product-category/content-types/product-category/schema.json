@@ -55,6 +55,64 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Activity",
+        "Award",
+        "Battery",
+        "BatteryCharging",
+        "Biohazard",
+        "Bubbles",
+        "CalendarDays",
+        "CheckCircle",
+        "CircleDollarSign",
+        "Clock",
+        "Code",
+        "Crosshair",
+        "Crown",
+        "DatabaseBackup",
+        "Droplets",
+        "HardDriveDownload",
+        "HeartPlus",
+        "Laptop",
+        "MapPin",
+        "MapPinPlus",
+        "Phone",
+        "PlugZap",
+        "ScanSearch",
+        "Shield",
+        "ShieldCheck",
+        "ShieldUser",
+        "Smile",
+        "Smartphone",
+        "SmartphoneCharging",
+        "Sparkles",
+        "SquareStack",
+        "Star",
+        "Tablet",
+        "TriangleAlert",
+        "Wrench",
+        "Zap"
+      ]
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "itemCount": {
+      "type": "integer"
+    },
+    "trending": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "text": {
+      "displayName": "tags",
+      "type": "component",
+      "repeatable": true,
+      "component": "tags.tags"
     }
   }
 }

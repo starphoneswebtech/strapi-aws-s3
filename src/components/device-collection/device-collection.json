@@ -9,7 +9,7 @@
     "Solo_1": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "files",
         "images"
@@ -17,12 +17,12 @@
     },
     "link": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "Solo_2": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -30,7 +30,7 @@
     },
     "link2": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "duo_1": {
       "type": "media",
@@ -52,24 +52,24 @@
     },
     "link_duo_1": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "link_duo_2": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "filter_string": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "featured_model_ptype": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "featured_model_img": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -77,11 +77,11 @@
     },
     "featured_model_button_name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "featured_model_button_link": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }

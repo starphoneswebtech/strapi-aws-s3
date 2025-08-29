@@ -10,22 +10,17 @@ export interface DeviceCollectionDeviceCollection
   attributes: {
     duo_1: Schema.Attribute.Media<'images' | 'files'>;
     duo_2: Schema.Attribute.Media<'files' | 'images'>;
-    featured_model_button_link: Schema.Attribute.String &
-      Schema.Attribute.Required;
-    featured_model_button_name: Schema.Attribute.String &
-      Schema.Attribute.Required;
-    featured_model_img: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-    featured_model_ptype: Schema.Attribute.String & Schema.Attribute.Required;
-    filter_string: Schema.Attribute.Text & Schema.Attribute.Required;
-    link: Schema.Attribute.String & Schema.Attribute.Required;
-    link_duo_1: Schema.Attribute.String & Schema.Attribute.Required;
-    link_duo_2: Schema.Attribute.String & Schema.Attribute.Required;
-    link2: Schema.Attribute.String & Schema.Attribute.Required;
-    Solo_1: Schema.Attribute.Media<'files' | 'images'> &
-      Schema.Attribute.Required;
-    Solo_2: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    featured_model_button_link: Schema.Attribute.String;
+    featured_model_button_name: Schema.Attribute.String;
+    featured_model_img: Schema.Attribute.Media<'images' | 'files'>;
+    featured_model_ptype: Schema.Attribute.String;
+    filter_string: Schema.Attribute.Text;
+    link: Schema.Attribute.String;
+    link_duo_1: Schema.Attribute.String;
+    link_duo_2: Schema.Attribute.String;
+    link2: Schema.Attribute.String;
+    Solo_1: Schema.Attribute.Media<'files' | 'images'>;
+    Solo_2: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 

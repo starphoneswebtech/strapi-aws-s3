@@ -59,6 +59,9 @@
       "type": "component",
       "repeatable": false,
       "component": "metadata.metadata"
+    },
+    "warranty": {
+      "type": "richtext"
     }
   }
 }

@@ -64,6 +64,9 @@
       "type": "component",
       "repeatable": false,
       "component": "author.author"
+    },
+    "readTime": {
+      "type": "string"
     }
   }
 }

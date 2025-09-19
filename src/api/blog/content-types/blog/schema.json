@@ -53,6 +53,17 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tags.tags"
+    },
+    "authorInfo": {
+      "displayName": "author",
+      "type": "component",
+      "repeatable": false,
+      "component": "author.author"
     }
   }
 }

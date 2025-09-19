@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AuthorAuthor extends Struct.ComponentSchema {
+  collectionName: 'components_author_authors';
+  info: {
+    displayName: 'author';
+  };
+  attributes: {
+    bio: Schema.Attribute.Text;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface DeviceCollectionDeviceCollection
   extends Struct.ComponentSchema {
   collectionName: 'components_device_collection_device_collections';
@@ -496,6 +508,7 @@ export interface ViewportViewport extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'author.author': AuthorAuthor;
       'device-collection.device-collection': DeviceCollectionDeviceCollection;
       'faq.faq': FaqFaq;
       'geometry.geometry': GeometryGeometry;

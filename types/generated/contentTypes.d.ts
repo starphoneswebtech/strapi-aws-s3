@@ -421,6 +421,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.String & Schema.Attribute.Required;
+    authorInfo: Schema.Attribute.Component<'author.author', false>;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;

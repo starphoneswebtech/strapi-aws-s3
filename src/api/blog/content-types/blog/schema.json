@@ -53,6 +53,11 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tags.tags"
     }
   }
 }

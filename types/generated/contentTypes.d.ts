@@ -438,6 +438,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     metadata: Schema.Attribute.Component<'metadata.metadata', false> &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    tags: Schema.Attribute.Component<'tags.tags', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -439,6 +439,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     metadata: Schema.Attribute.Component<'metadata.metadata', false> &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    readTime: Schema.Attribute.String;
     tags: Schema.Attribute.Component<'tags.tags', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -537,6 +538,26 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     answer: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'At Star Phones, we provide a wide variety of accessories, including stylish phone cases, durable screen protectors, reliable chargers, trendy headphones, and much more.'>;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Used Devices',
+        'Cases and Cover',
+        'Screen Protector',
+        'Camera Protector',
+        'Cable',
+        'Adaptors',
+        'Car Chargers',
+        'Wireless Chargers',
+        'Phone Holder',
+        'Audio',
+        'Power banks',
+        'Wearables',
+        'Cross Body Straps',
+        'Stylus',
+        'Pop Sockets',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'Cases and Cover'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -555,6 +555,8 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
         'Cross Body Straps',
         'Stylus',
         'Pop Sockets',
+        'Easy Tag',
+        'Wrist Straps',
       ]
     > &
       Schema.Attribute.DefaultTo<'Cases and Cover'>;

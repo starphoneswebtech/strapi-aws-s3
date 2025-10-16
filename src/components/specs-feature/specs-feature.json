@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_specs_feature_specs_features",
+  "info": {
+    "displayName": "specsFeature"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "shortDesc": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

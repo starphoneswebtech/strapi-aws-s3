@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_feature_features",
+  "info": {
+    "displayName": "feature",
+    "icon": "emotionUnhappy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

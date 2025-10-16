@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_box_content_box_contents",
+  "info": {
+    "displayName": "boxContent"
+  },
+  "options": {},
+  "attributes": {
+    "boxContentInside": {
+      "displayName": "boxContentInside",
+      "type": "component",
+      "repeatable": true,
+      "component": "box-content.box-content-inside"
+    },
+    "boxContentDetails": {
+      "displayName": "boxContentDetails",
+      "type": "component",
+      "repeatable": true,
+      "component": "box-content-details.box-content-details"
+    }
+  }
+}

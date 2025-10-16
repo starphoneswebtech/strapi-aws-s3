@@ -557,6 +557,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
         'Pop Sockets',
         'Easy Tag',
         'Wrist Straps',
+        'Repairs',
       ]
     > &
       Schema.Attribute.DefaultTo<'Cases and Cover'>;
@@ -873,6 +874,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    boxContent: Schema.Attribute.Component<'box-content.box-content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -886,7 +888,12 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     metadata: Schema.Attribute.Component<'metadata.metadata', false>;
+    productFeature: Schema.Attribute.Component<
+      'product-feature.product-feature',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    specification: Schema.Attribute.Component<'specs.specs', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

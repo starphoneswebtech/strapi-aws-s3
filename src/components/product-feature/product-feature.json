@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_product_feature_product_features",
+  "info": {
+    "displayName": "Product Feature",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "feature": {
+      "displayName": "feature",
+      "type": "component",
+      "repeatable": true,
+      "component": "feature.feature"
+    }
+  }
+}

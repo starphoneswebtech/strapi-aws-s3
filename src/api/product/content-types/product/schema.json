@@ -20,6 +20,24 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "productFeature": {
+      "displayName": "Product Feature",
+      "type": "component",
+      "repeatable": false,
+      "component": "product-feature.product-feature"
+    },
+    "specification": {
+      "displayName": "specs",
+      "type": "component",
+      "repeatable": false,
+      "component": "specs.specs"
+    },
+    "boxContent": {
+      "displayName": "boxContent",
+      "type": "component",
+      "repeatable": false,
+      "component": "box-content.box-content"
     }
   }
 }

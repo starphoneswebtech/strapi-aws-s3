@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_box_content_box_content_insides",
+  "info": {
+    "displayName": "boxContentInside"
+  },
+  "options": {},
+  "attributes": {
+    "insideContent": {
+      "type": "string"
+    }
+  }
+}

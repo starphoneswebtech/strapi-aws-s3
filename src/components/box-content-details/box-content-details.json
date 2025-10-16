@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_box_content_details_box_content_details",
+  "info": {
+    "displayName": "boxContentDetails",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "detail": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

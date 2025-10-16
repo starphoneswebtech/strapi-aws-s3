@@ -12,6 +12,46 @@ export interface AuthorAuthor extends Struct.ComponentSchema {
   };
 }
 
+export interface BoxContentDetailsBoxContentDetails
+  extends Struct.ComponentSchema {
+  collectionName: 'components_box_content_details_box_content_details';
+  info: {
+    displayName: 'boxContentDetails';
+    icon: 'cup';
+  };
+  attributes: {
+    detail: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface BoxContentBoxContent extends Struct.ComponentSchema {
+  collectionName: 'components_box_content_box_contents';
+  info: {
+    displayName: 'boxContent';
+  };
+  attributes: {
+    boxContentDetails: Schema.Attribute.Component<
+      'box-content-details.box-content-details',
+      true
+    >;
+    boxContentInside: Schema.Attribute.Component<
+      'box-content.box-content-inside',
+      true
+    >;
+  };
+}
+
+export interface BoxContentBoxContentInside extends Struct.ComponentSchema {
+  collectionName: 'components_box_content_box_content_insides';
+  info: {
+    displayName: 'boxContentInside';
+  };
+  attributes: {
+    insideContent: Schema.Attribute.String;
+  };
+}
+
 export interface DeviceCollectionDeviceCollection
   extends Struct.ComponentSchema {
   collectionName: 'components_device_collection_device_collections';
@@ -50,6 +90,20 @@ export interface FaqFaq extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'Example Question?'>;
+  };
+}
+
+export interface FeatureFeature extends Struct.ComponentSchema {
+  collectionName: 'components_feature_features';
+  info: {
+    displayName: 'feature';
+    icon: 'emotionUnhappy';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -124,6 +178,19 @@ export interface ProductCollectionProductCollections
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     featureImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface ProductFeatureProductFeature extends Struct.ComponentSchema {
+  collectionName: 'components_product_feature_product_features';
+  info: {
+    displayName: 'Product Feature';
+    icon: 'cup';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    feature: Schema.Attribute.Component<'feature.feature', true>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -421,6 +488,34 @@ export interface ServiceServiceHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SpecsFeatureSpecsFeature extends Struct.ComponentSchema {
+  collectionName: 'components_specs_feature_specs_features';
+  info: {
+    displayName: 'specsFeature';
+  };
+  attributes: {
+    icon: Schema.Attribute.String;
+    shortDesc: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface SpecsSpecs extends Struct.ComponentSchema {
+  collectionName: 'components_specs_specs';
+  info: {
+    displayName: 'specs';
+  };
+  attributes: {
+    specsFeature: Schema.Attribute.Component<
+      'specs-feature.specs-feature',
+      true
+    >;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface StoreDetailsAboutUs extends Struct.ComponentSchema {
   collectionName: 'components_store_details_aboutuses';
   info: {
@@ -509,13 +604,18 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'author.author': AuthorAuthor;
+      'box-content-details.box-content-details': BoxContentDetailsBoxContentDetails;
+      'box-content.box-content': BoxContentBoxContent;
+      'box-content.box-content-inside': BoxContentBoxContentInside;
       'device-collection.device-collection': DeviceCollectionDeviceCollection;
       'faq.faq': FaqFaq;
+      'feature.feature': FeatureFeature;
       'geometry.geometry': GeometryGeometry;
       'location.location': LocationLocation;
       'metadata.metadata': MetadataMetadata;
       'product-collection.featured-collection': ProductCollectionFeaturedCollection;
       'product-collection.product-collections': ProductCollectionProductCollections;
+      'product-feature.product-feature': ProductFeatureProductFeature;
       'products.product-filters': ProductsProductFilters;
       'service.feature': ServiceFeature;
       'service.featured-services': ServiceFeaturedServices;
@@ -525,6 +625,8 @@ declare module '@strapi/strapi' {
       'service.secondary-button': ServiceSecondaryButton;
       'service.service-features': ServiceServiceFeatures;
       'service.service-hero': ServiceServiceHero;
+      'specs-feature.specs-feature': SpecsFeatureSpecsFeature;
+      'specs.specs': SpecsSpecs;
       'store-details.about-us': StoreDetailsAboutUs;
       'store-details.map-banner-info': StoreDetailsMapBannerInfo;
       'store-hours.store-hours': StoreHoursStoreHours;

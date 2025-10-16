@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_specs_specs",
+  "info": {
+    "displayName": "specs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "specsFeature": {
+      "displayName": "specsFeature",
+      "type": "component",
+      "repeatable": true,
+      "component": "specs-feature.specs-feature"
+    }
+  }
+}
